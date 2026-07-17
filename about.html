@@ -9,6 +9,18 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<style>
+/* page-specific: two-column prose. Duplicated from styles.css so this page
+   renders correctly even if styles.css is out of date. */
+.split{display:grid;grid-template-columns:.78fr 1.22fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.split .split-head{position:sticky;top:100px}
+.split .split-head h2{font-size:clamp(1.8rem,3.2vw,2.6rem);margin-bottom:0}
+.split .prose{max-width:66ch}
+@media(max-width:900px){
+  .split{grid-template-columns:1fr;gap:1.2rem}
+  .split .split-head{position:static}
+}
+</style>
 </head>
 <body>
 
@@ -48,7 +60,6 @@
       <div class="split-head">
         <span class="eyebrow">How I got here</span>
         <h2>I started at a <span class="grad">bench</span></h2>
-        <div class="note">2011 — 2018<br>Sirsa → Kurukshetra<br>→ Mohali → Roorkee</div>
       </div>
       <div class="prose">
         <p>I trained as an organic chemist. My M.Sc. at Kurukshetra University was specialised in organic chemistry, and in the summer of 2015 I went to <b>NIPER Mohali</b> as a trainee — running HPLC methods and doing air-sensitive synthesis under nitrogen. Glassware, inert atmospheres, spectra you have to actually interpret. It's the kind of work where you learn that a result is only as good as the care you took getting it.</p>
@@ -161,7 +172,6 @@
       <div class="split-head">
         <span class="eyebrow">How I work</span>
         <h2>Do → check → <span class="grad">why</span></h2>
-        <div class="note">DO — the exact command<br>CHECK — the output that<br>&nbsp;&nbsp;&nbsp;&nbsp;proves it worked<br>WHY — the physical reason<br>&nbsp;&nbsp;&nbsp;&nbsp;it's there</div>
       </div>
       <div class="prose">
         <p>I keep registers. For every step of a calculation I write down three things: <b>what I did</b> (the exact command), <b>what I checked</b> (the output that proves it worked), and <b>why</b> (the physical reason it's there). It sounds like bureaucracy. It isn't.</p>

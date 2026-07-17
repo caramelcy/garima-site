@@ -286,3 +286,13 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem
 .pull{border-left:2px solid var(--cyan);padding:.2rem 0 .2rem 1.4rem;margin:1.8rem 0;
   font-family:var(--display);font-size:1.15rem;font-weight:600;color:var(--text);
   letter-spacing:-.01em;line-height:1.5;max-width:52ch}
+
+/* ===== split: sticky heading left, prose right ===== */
+.split{display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.split .split-head{position:sticky;top:100px}
+.split .split-head h2{font-size:clamp(1.8rem,3.2vw,2.6rem);margin-bottom:.8rem}
+.split .prose{max-width:64ch}
+@media(max-width:900px){
+  .split{grid-template-columns:1fr;gap:1.5rem}
+  .split .split-head{position:static}
+}
