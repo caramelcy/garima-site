@@ -9,6 +9,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<style>
+/* page-specific: two-column prose. Duplicated from styles.css so this page
+   renders correctly even if styles.css is out of date. */
+.split{display:grid;grid-template-columns:.78fr 1.22fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.split .split-head{position:sticky;top:100px}
+.split .split-head h2{font-size:clamp(1.8rem,3.2vw,2.6rem);margin-bottom:0}
+.split .prose{max-width:66ch}
+.split .prose p{max-width:none}
+@media(max-width:900px){
+  .split{grid-template-columns:1fr;gap:1.2rem}
+  .split .split-head{position:static}
+}
+</style>
 </head>
 <body>
 
@@ -59,12 +72,16 @@
 
 <section>
   <div class="wrap">
-    <div class="reveal">
-      <span class="eyebrow">The question</span>
-      <h2>Why would a bond get <span class="grad">stronger</span> when you pull it?</h2>
-      <p class="lede" style="margin-bottom:1.2rem">Force does work along the escape path, so it normally lowers the barrier a bond must climb to break — pull harder, break sooner. That's a <em>slip</em> bond, and it's what nearly everything does.</p>
-      <p style="margin-bottom:1.2rem">A <em>catch</em> bond inverts it. Over some range of force, its lifetime <em>rises</em> as tension grows. Nature uses this where things must hold on precisely when they're being torn away — bacteria gripping tissue against flow, cells resisting shear. Understanding it means understanding a bond whose energy landscape reshapes under the very force trying to break it.</p>
-      <p>My work treats this at the level of a polymer: not one bond in isolation, but a chain where the load is shared, redistributed, and where broken bonds can re-form. That coupling — many bonds, one force, rupture <em>and</em> rebinding at once — is where the analytical difficulty and the interesting physics both live.</p>
+    <div class="reveal split">
+      <div class="split-head">
+        <span class="eyebrow">The question</span>
+        <h2>Why would a bond get <span class="grad">stronger</span> when you pull it?</h2>
+      </div>
+      <div class="prose">
+        <p class="lede">Force does work along the escape path, so it normally lowers the barrier a bond must climb to break — pull harder, break sooner. That's a <em>slip</em> bond, and it's what nearly everything does.</p>
+        <p>A <em>catch</em> bond inverts it. Over some range of force, its lifetime <em>rises</em> as tension grows. Nature uses this where things must hold on precisely when they're being torn away — bacteria gripping tissue against flow, cells resisting shear. Understanding it means understanding a bond whose energy landscape reshapes under the very force trying to break it.</p>
+        <p>My work treats this at the level of a polymer: not one bond in isolation, but a chain where the load is shared, redistributed, and where broken bonds can re-form. That coupling — many bonds, one force, rupture <em>and</em> rebinding at once — is where the analytical difficulty and the interesting physics both live.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -90,15 +107,19 @@
 
 <section>
   <div class="wrap">
-    <div class="reveal" style="max-width:70ch">
-      <span class="eyebrow">Current direction</span>
-      <h2>From coarse-grained<br><span class="grad">to all-atom, and to electrons</span></h2>
-      <p style="margin-bottom:1.2rem">The theory says rupture force should depend on how fast you load a bond — logarithmically, not linearly. I've been testing that directly with <b style="color:var(--text)">steered molecular dynamics</b>: build a solvated all-atom system from a crystal structure, align the pulling axis to the ligand's real exit path, then pull with a moving harmonic spring and record the force it transmits.</p>
-      <p style="margin-bottom:1.2rem">Because rupture is stochastic, one pull means nothing. The pipeline runs replicated trajectories at several loading rates, extracts a rupture-force distribution at each, and fits the loading-rate dependence to recover the bond's kinetic parameters. Every stage is verified before the next is trusted — which is how the interesting failures get caught rather than published.</p>
-      <p>Beyond that sits the question I find hardest and most interesting: when a bond is strained, does its <em>electronic structure</em> change in a way that geometry alone doesn't account for? That's a quantum-chemistry problem — QTAIM topology of the electron density, natural bond orbital charge transfer — and it's where this work is heading.</p>
-      <div class="chips" style="margin-top:1.5rem">
-        <span class="chip">GROMACS</span><span class="chip">steered MD</span><span class="chip">force spectroscopy</span>
-        <span class="chip">ORCA</span><span class="chip">Multiwfn</span><span class="chip">QTAIM / NBO</span><span class="chip">MDAnalysis</span>
+    <div class="reveal split">
+      <div class="split-head">
+        <span class="eyebrow">Current direction</span>
+        <h2>From coarse-grained<br>to all-atom, and to <span class="grad">electrons</span></h2>
+      </div>
+      <div class="prose">
+        <p>The theory says rupture force should depend on how fast you load a bond — logarithmically, not linearly. I've been testing that directly with <b style="color:var(--text)">steered molecular dynamics</b>: build a solvated all-atom system from a crystal structure, align the pulling axis to the ligand's real exit path, then pull with a moving harmonic spring and record the force it transmits.</p>
+        <p>Because rupture is stochastic, one pull means nothing. The pipeline runs replicated trajectories at several loading rates, extracts a rupture-force distribution at each, and fits the loading-rate dependence to recover the bond's kinetic parameters. Every stage is verified before the next is trusted — which is how the interesting failures get caught rather than published.</p>
+        <p>Beyond that sits the question I find hardest and most interesting: when a bond is strained, does its <em>electronic structure</em> change in a way that geometry alone doesn't account for? That's a quantum-chemistry problem — QTAIM topology of the electron density, natural bond orbital charge transfer — and it's where this work is heading.</p>
+        <div class="chips" style="margin-top:1.5rem">
+          <span class="chip">GROMACS</span><span class="chip">steered MD</span><span class="chip">force spectroscopy</span>
+          <span class="chip">ORCA</span><span class="chip">Multiwfn</span><span class="chip">QTAIM / NBO</span><span class="chip">MDAnalysis</span>
+        </div>
       </div>
     </div>
   </div>
