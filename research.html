@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research — Garima</title>
+<meta name="description" content="Doctoral research on rupture and rebinding dynamics of bead-spring polymers under force: catch and slip bond kinetics, Fokker-Planck formalism, Homotopy Analysis Method, and steered molecular dynamics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<canvas id="net"></canvas>
+<div class="aurora"><div class="orb a"></div><div class="orb b"></div><div class="orb c"></div></div>
+<div class="grain"></div>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Garima<em>_</em><small>AMRSC</small></a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">MENU</button>
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html" aria-current="page">Research</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="phead">
+  <div class="wrap">
+    <span class="eyebrow">Doctoral research · 2018 — 2026</span>
+    <h1>Bonds under force,<br><span class="grad">from theory to electrons</span></h1>
+    <p class="lede">Pull hard enough on almost any bond and it breaks sooner. A few bonds do the opposite — they grip <em>harder</em> the harder you pull. My thesis is about the physics of that, worked out in theory and simulation.</p>
+  </div>
+</header>
+
+<section style="padding-top:1rem">
+  <div class="wrap">
+    <figure class="viz glass reveal">
+      <svg id="chain" viewBox="0 0 480 180" role="img" aria-label="Animated bead-spring chain: the chain loads under tension, the end bond ruptures, and then rebinds.">
+        <defs>
+          <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="3" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <line class="gl" x1="24" y1="145" x2="456" y2="145"/>
+        <text class="axis" x="24" y="162">bead–spring chain · force applied at the violet end</text>
+        <text id="chainLabel" class="axis" x="456" y="162" text-anchor="end" fill="#5D7086">bound, under load</text>
+      </svg>
+      <figcaption>The model at the centre of the thesis: a chain of beads joined by springs, pulled at one end. The terminal bond loads, <b>ruptures</b>, and then rebinds — over and over. Whether force makes that cycle faster or slower is the whole question.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">The question</span>
+      <h2>Why would a bond get <span class="grad">stronger</span> when you pull it?</h2>
+      <p class="lede" style="margin-bottom:1.2rem">Force does work along the escape path, so it normally lowers the barrier a bond must climb to break — pull harder, break sooner. That's a <em>slip</em> bond, and it's what nearly everything does.</p>
+      <p style="margin-bottom:1.2rem">A <em>catch</em> bond inverts it. Over some range of force, its lifetime <em>rises</em> as tension grows. Nature uses this where things must hold on precisely when they're being torn away — bacteria gripping tissue against flow, cells resisting shear. Understanding it means understanding a bond whose energy landscape reshapes under the very force trying to break it.</p>
+      <p>My work treats this at the level of a polymer: not one bond in isolation, but a chain where the load is shared, redistributed, and where broken bonds can re-form. That coupling — many bonds, one force, rupture <em>and</em> rebinding at once — is where the analytical difficulty and the interesting physics both live.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Approach</span>
+      <h2>Four ways at the <span class="grad">same problem</span></h2>
+    </div>
+    <div class="cards reveal" style="margin-top:2rem">
+      <div class="card"><span class="ic">01 / MODEL</span><h3>Bead–spring polymers</h3>
+        <p>Coarse-grained chains whose bonds break and re-form with force-dependent rates, capturing catch and slip kinetics without simulating every atom.</p></div>
+      <div class="card"><span class="ic">02 / STOCHASTIC</span><h3>Simulation</h3>
+        <p>Langevin, Brownian, and Monte Carlo dynamics — rupture is a random event, so results are averaged over roughly 1,000 independent trajectories before anything is believed.</p></div>
+      <div class="card"><span class="ic">03 / ANALYTICAL</span><h3>Fokker–Planck &amp; master equations</h3>
+        <p>Mean-field formalism for the bound-fraction dynamics, and analytical solutions for strongly nonlinear coupled PDEs via the Homotopy Analysis Method and a travelling-wave treatment.</p></div>
+      <div class="card"><span class="ic">04 / NUMERICS</span><h3>Solvers in C &amp; Mathematica</h3>
+        <p>Fourth-order Runge–Kutta with adaptive step size, written in C, for rupture-front velocity analysis; Mathematica for the symbolic and semi-analytical work.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="reveal" style="max-width:70ch">
+      <span class="eyebrow">Current direction</span>
+      <h2>From coarse-grained<br><span class="grad">to all-atom, and to electrons</span></h2>
+      <p style="margin-bottom:1.2rem">The theory says rupture force should depend on how fast you load a bond — logarithmically, not linearly. I've been testing that directly with <b style="color:var(--text)">steered molecular dynamics</b>: build a solvated all-atom system from a crystal structure, align the pulling axis to the ligand's real exit path, then pull with a moving harmonic spring and record the force it transmits.</p>
+      <p style="margin-bottom:1.2rem">Because rupture is stochastic, one pull means nothing. The pipeline runs replicated trajectories at several loading rates, extracts a rupture-force distribution at each, and fits the loading-rate dependence to recover the bond's kinetic parameters. Every stage is verified before the next is trusted — which is how the interesting failures get caught rather than published.</p>
+      <p>Beyond that sits the question I find hardest and most interesting: when a bond is strained, does its <em>electronic structure</em> change in a way that geometry alone doesn't account for? That's a quantum-chemistry problem — QTAIM topology of the electron density, natural bond orbital charge transfer — and it's where this work is heading.</p>
+      <div class="chips" style="margin-top:1.5rem">
+        <span class="chip">GROMACS</span><span class="chip">steered MD</span><span class="chip">force spectroscopy</span>
+        <span class="chip">ORCA</span><span class="chip">Multiwfn</span><span class="chip">QTAIM / NBO</span><span class="chip">MDAnalysis</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Presented at</span>
+      <h2>Conferences &amp; <span class="grad">awards</span></h2>
+    </div>
+    <div class="rows reveal">
+      <div class="row">
+        <div class="meta">DEC 2021<br>IISER KOLKATA</div>
+        <div>
+          <h3>Best Poster Prize — PCCP</h3>
+          <p>Theoretical Chemistry Symposium (TCS 2021). Awarded by <em>Physical Chemistry Chemical Physics</em>.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="meta">NOV 2022<br>IIT ROORKEE</div>
+        <div>
+          <h3>Best Poster Award — Research Scholars' Day</h3>
+          <p>Department of Chemistry, IIT Roorkee.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="meta">DEC 2022<br>IIT KHARAGPUR</div>
+        <div>
+          <h3>Poster — CompFlu 2022</h3>
+          <p>Complex Fluids and Soft Matter, IIT Kharagpur Research Park.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="meta">SEP 2021<br>NIT CALICUT</div>
+        <div>
+          <h3>Workshop — NMR &amp; HR-MS data acquisition and analysis</h3>
+          <p>Sponsored by Accelerate Vigyan, SERB.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="meta">DEC 2021<br>IIT ROORKEE</div>
+        <div>
+          <h3>2nd International Conference — Main Group Molecules to Materials (MMM-II)</h3>
+          <p>Participant.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Garima, AMRSC · Department of Chemistry, IIT Roorkee</span>
+    <span><a href="about.html#contact" style="text-decoration:none">Contact →</a></span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

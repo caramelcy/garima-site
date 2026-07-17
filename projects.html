@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects — Garima</title>
+<meta name="description" content="Computer-aided drug design, quantum battery modelling, periodic DFT, scientific web development, and analytical chemistry at NIPER.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<canvas id="net"></canvas>
+<div class="aurora"><div class="orb a"></div><div class="orb b"></div><div class="orb c"></div></div>
+<div class="grain"></div>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Garima<em>_</em><small>AMRSC</small></a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">MENU</button>
+    <ul id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="projects.html" aria-current="page">Projects</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="phead">
+  <div class="wrap">
+    <span class="eyebrow">Projects &amp; training</span>
+    <h1>Things I've <span class="grad">built<br>and learned</span></h1>
+    <p class="lede">Work outside the thesis: drug design, quantum many-body models, periodic DFT, a research-group website, and the bench chemistry I started from.</p>
+  </div>
+</header>
+
+<section style="padding-top:1rem">
+  <div class="wrap">
+    <div class="rows reveal">
+
+      <div class="row">
+        <div class="meta">NOV — DEC 2025<br><br>CENTRE FOR ADVANCED<br>CHEMICAL RESEARCH<br>NEW DELHI</div>
+        <div>
+          <h3>Computer-aided drug design</h3>
+          <p>Hands-on training in the modern CADD workflow, end to end.</p>
+          <ul class="bullets">
+            <li>Protein–ligand docking and virtual screening with AutoDock Vina, including receptor preparation and binding-site definition</li>
+            <li>Structure-based and ligand-based design workflows; QSAR modelling and pharmacophore mapping for lead optimisation</li>
+            <li>Molecular property and ADMET prediction to filter candidates before synthesis</li>
+            <li>Integrated docking scores with MD-derived stability to rank binding poses more honestly than score alone</li>
+          </ul>
+          <div class="chips"><span class="chip">AutoDock Vina</span><span class="chip">virtual screening</span><span class="chip">QSAR</span><span class="chip">pharmacophore</span><span class="chip">ADMET</span></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="meta">OCT 2023 —<br>JAN 2024<br><br>PaAC<br>IIT ROORKEE</div>
+        <div>
+          <h3>Quantum batteries — many-body models of energy storage</h3>
+          <p>A project on quantum-mechanical energy storage: how entanglement and collective effects change what a battery can do.</p>
+          <ul class="bullets">
+            <li>Modelled charging dynamics in Dicke and spin-chain systems, comparing collective versus independent charging</li>
+            <li>Studied extractable work and ergotropy under realistic constraints</li>
+            <li>Examined decoherence and dissipation, and their effect on achievable quantum advantage</li>
+          </ul>
+          <div class="chips"><span class="chip">quantum many-body</span><span class="chip">Dicke model</span><span class="chip">ergotropy</span><span class="chip">open systems</span></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="meta">SEP — DEC 2023<br><br>GHENT UNIVERSITY<br>online</div>
+        <div>
+          <h3>DFT and computational materials physics</h3>
+          <p>Formal coursework in density functional theory and its application to materials.</p>
+          <ul class="bullets">
+            <li>Kohn–Sham formalism, exchange–correlation functionals, and where each approximation breaks</li>
+            <li>Plane-wave and pseudopotential methods for periodic systems; convergence testing as a discipline, not an afterthought</li>
+            <li>Band structures, densities of states, and structural optimisation in Quantum ESPRESSO</li>
+          </ul>
+          <div class="chips"><span class="chip">Quantum ESPRESSO</span><span class="chip">periodic DFT</span><span class="chip">band structure</span><span class="chip">pseudopotentials</span></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="meta">JUN — OCT 2025<br><br>LLAMPS LAB<br>IIT ROORKEE</div>
+        <div>
+          <h3>Scientific web development — research group site</h3>
+          <p>Designed and built a research group's public website from scratch, then handed it over maintainable.</p>
+          <ul class="bullets">
+            <li>Built in React.js with a component architecture for publications, people, and research areas</li>
+            <li>Responsive layout and content architecture designed for the people who'd actually update it</li>
+            <li>Deployed and documented for the group to maintain without me</li>
+          </ul>
+          <div class="chips"><span class="chip">React.js</span><span class="chip">JavaScript</span><span class="chip">UI design</span><span class="chip">deployment</span></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="meta">JUN — JUL 2015<br><br>NIPER MOHALI</div>
+        <div>
+          <h3>Summer research intern — analytical &amp; synthetic chemistry</h3>
+          <p>Where the bench work comes from. National Institute of Pharmaceutical Education and Research.</p>
+          <ul class="bullets">
+            <li>HPLC method work and quantitative analysis</li>
+            <li>Air-sensitive synthesis under inert nitrogen atmosphere</li>
+            <li>Spectroscopic characterisation and interpretation of reaction products</li>
+          </ul>
+          <div class="chips"><span class="chip">HPLC</span><span class="chip">inert-atmosphere synthesis</span><span class="chip">characterisation</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Toolkit</span>
+      <h2>What I <span class="grad">work with</span></h2>
+    </div>
+    <div class="kit reveal" style="margin-top:2rem">
+      <div class="col"><h3>Simulation</h3><ul>
+        <li>GROMACS <span>MD · steered MD</span></li>
+        <li>ORCA <span>DFT</span></li>
+        <li>Quantum ESPRESSO <span>periodic DFT</span></li>
+        <li>AutoDock Vina <span>docking</span></li>
+        <li>Multiwfn <span>wavefunction</span></li>
+        <li>CHARMM-GUI <span>system building</span></li>
+      </ul></div>
+      <div class="col"><h3>Programming</h3><ul>
+        <li>Python <span>NumPy · SciPy · MDAnalysis</span></li>
+        <li>C <span>simulation codes · RK4</span></li>
+        <li>Fortran <span>numerics</span></li>
+        <li>Mathematica <span>symbolic · HAM</span></li>
+        <li>React.js <span>web</span></li>
+        <li>HPC <span>cluster workflows</span></li>
+      </ul></div>
+      <div class="col"><h3>Cheminformatics</h3><ul>
+        <li>RDKit <span>molecules</span></li>
+        <li>Biopython <span>structures</span></li>
+        <li>PyMOL / VMD <span>visualisation</span></li>
+        <li>Matplotlib <span>figures</span></li>
+        <li>Protein Data Bank <span>structures</span></li>
+      </ul></div>
+      <div class="col"><h3>Bench &amp; analytical</h3><ul>
+        <li>HPLC <span>method &amp; analysis</span></li>
+        <li>NMR · FTIR · UV-Vis <span>spectroscopy</span></li>
+        <li>TLC · column chromatography <span>separation</span></li>
+        <li>Inert-atmosphere synthesis <span>N₂ / Schlenk</span></li>
+        <li>Spectrophotometer · fluorimeter <span>instruments</span></li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Garima, AMRSC · Department of Chemistry, IIT Roorkee</span>
+    <span><a href="about.html#contact" style="text-decoration:none">Contact →</a></span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

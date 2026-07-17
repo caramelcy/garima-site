@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Garima — Computational &amp; Theoretical Chemist</title>
+<meta name="description" content="Computational and theoretical chemist, PhD IIT Roorkee. Molecular dynamics, DFT, computer-aided drug design — and seven years teaching chemistry.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<canvas id="net"></canvas>
+<div class="aurora"><div class="orb a"></div><div class="orb b"></div><div class="orb c"></div></div>
+<div class="grain"></div>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Garima<em>_</em><small>AMRSC</small></a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu">MENU</button>
+    <ul id="menu">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" style="min-height:100svh;display:flex;align-items:center;padding:7rem 0 4rem">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill"><span class="dot"></span>PhD thesis submitted · 2026</span>
+      <h1 style="font-size:clamp(3rem,8.5vw,6.2rem);margin:1.4rem 0">
+        <span style="display:block">Garima</span>
+        <span class="grad" style="display:block;font-size:.42em;letter-spacing:-.02em;line-height:1.2;margin-top:.35em">Computational &amp;<br>Theoretical Chemist</span>
+      </h1>
+      <p class="lede" style="margin-bottom:2rem">I study what happens to molecules when you pull on them — bead–spring theory, molecular dynamics, and quantum chemistry, aimed at bonds that behave in ways intuition doesn't predict. I've also spent seven years teaching chemistry to people who are just meeting it.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="about.html#contact">Get in touch</a>
+        <a class="btn btn-ghost" href="research.html">See the research</a>
+      </div>
+    </div>
+
+    <figure class="viz glass">
+      <svg viewBox="0 0 420 250" role="img" aria-label="Force-extension curve: a bond loads, ruptures at a peak force, then relaxes to baseline.">
+        <defs>
+          <linearGradient id="cg" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#22D3EE"/><stop offset=".6" stop-color="#3B82F6"/>
+            <stop offset=".68" stop-color="#FB5E5E"/><stop offset="1" stop-color="#A78BFA"/>
+          </linearGradient>
+        </defs>
+        <line class="gl" x1="46" y1="16" x2="46" y2="205"/>
+        <line class="gl" x1="46" y1="205" x2="406" y2="205"/>
+        <line class="gl" x1="46" y1="58" x2="406" y2="58"/>
+        <line class="gl" x1="46" y1="107" x2="406" y2="107"/>
+        <line class="gl" x1="46" y1="156" x2="406" y2="156"/>
+        <text class="axis" x="40" y="61" text-anchor="end">1200</text>
+        <text class="axis" x="40" y="110" text-anchor="end">800</text>
+        <text class="axis" x="40" y="159" text-anchor="end">400</text>
+        <text class="axis" x="40" y="208" text-anchor="end">0</text>
+        <text class="axis" x="13" y="122" text-anchor="middle" transform="rotate(-90 13 122)">Force (pN)</text>
+        <text class="axis" x="226" y="232" text-anchor="middle">Extension</text>
+        <path id="fc" class="curve"/>
+        <g class="pk">
+          <circle id="pk" r="3.6" fill="#FB5E5E"/>
+          <circle id="pk2" r="8" fill="none" stroke="#FB5E5E" stroke-opacity=".35"/>
+          <text id="pkt" class="axis" fill="#FB5E5E" text-anchor="middle">rupture</text>
+        </g>
+      </svg>
+      <figcaption>Force–extension of a single bond under load. It resists, the force climbs, and at the <b>rupture peak</b> it lets go. The shape of this curve is most of my thesis.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Three things I do</span>
+      <h2>Simulate, solve, <span class="grad">explain</span></h2>
+    </div>
+    <div class="cards reveal" style="margin-top:2rem">
+      <a class="card" href="research.html">
+        <span class="ic">01 / RESEARCH</span>
+        <h3>Bonds under force</h3>
+        <p>Rupture and rebinding of bead–spring polymers governed by catch- and slip-bond kinetics — stochastic simulation, Fokker–Planck formalism, and analytical solutions via the Homotopy Analysis Method.</p>
+        <span class="go">Read the science →</span>
+      </a>
+      <a class="card" href="projects.html">
+        <span class="ic">02 / PROJECTS</span>
+        <h3>Drug design, DFT, quantum</h3>
+        <p>Protein–ligand docking and virtual screening with AutoDock Vina, periodic DFT in Quantum ESPRESSO, many-body models of quantum batteries, and a research-group site built in React.</p>
+        <span class="go">See the work →</span>
+      </a>
+      <a class="card" href="teaching.html">
+        <span class="ic">03 / TEACHING</span>
+        <h3>Seven years explaining chemistry</h3>
+        <p>From IGCSE and IB to JEE Advanced and CSIR-NET JRF — lecturer, teaching assistant, and one-to-one mentor. If I can't explain it plainly, I don't understand it yet.</p>
+        <span class="go">How I teach →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="stats reveal">
+      <div class="stat"><div class="n grad" data-count="58" data-suffix="">0</div><div class="l">All-India Rank<br>CSIR-UGC NET · JRF</div></div>
+      <div class="stat"><div class="n grad" data-count="341">0</div><div class="l">All-India Rank<br>GATE Chemistry</div></div>
+      <div class="stat"><div class="n grad" data-count="7" data-suffix="+">0</div><div class="l">Years teaching<br>across 6 curricula</div></div>
+      <div class="stat"><div class="n grad" data-count="8.625">0</div><div class="l">PhD CGPA<br>IIT Roorkee</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="contact-box reveal">
+      <div>
+        <span class="eyebrow">Currently</span>
+        <h2 style="font-size:clamp(1.6rem,3vw,2.3rem)">Open to computational<br><span class="grad">chemistry roles</span></h2>
+        <p>Thesis submitted. I'm looking for work in molecular simulation, computational chemistry, and computer-aided drug design — in industry or a postdoc. If that's what your team does, I'd like to hear from you.</p>
+      </div>
+      <ul class="links">
+        <li><a href="mailto:garima@cy.iitr.ac.in">garima@cy.iitr.ac.in</a></li>
+        <li><a href="tel:+919996025980">+91 99960 25980</a></li>
+        <li><a href="https://linkedin.com/in/garima-computational-chemist">LinkedIn</a></li>
+        <li><a href="about.html">Full CV &amp; background</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Garima, AMRSC · Department of Chemistry, IIT Roorkee</span>
+    <span>Built by hand</span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
