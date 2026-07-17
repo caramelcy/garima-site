@@ -233,27 +233,50 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,4vw,4rem);align-items:center}
 @media(max-width:940px){.hero-grid{grid-template-columns:1fr;gap:3rem}}
 
-/* ===== timeline ===== */
-.tl{position:relative;margin-top:2.5rem;padding-left:2.2rem}
-.tl::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;
-  background:linear-gradient(180deg,var(--cyan),var(--violet) 50%,rgba(167,139,250,0))}
-.tl-item{position:relative;padding:0 0 2.2rem}
-.tl-item::before{content:"";position:absolute;left:-2.2rem;top:6px;width:14px;height:14px;
-  border-radius:50%;background:var(--bg);border:2px solid var(--cyan);
-  box-shadow:0 0 12px rgba(34,211,238,.6);transition:.4s}
-.tl-item:hover::before{background:var(--cyan);transform:scale(1.25)}
-.tl-item.warm::before{border-color:var(--amber);box-shadow:0 0 12px rgba(251,191,36,.6)}
+/* ===== timeline (centre spine, alternating) ===== */
+.tl{position:relative;margin-top:3rem;padding:0}
+.tl::before{content:"";position:absolute;left:50%;top:4px;bottom:4px;width:2px;
+  transform:translateX(-50%);
+  background:linear-gradient(180deg,rgba(34,211,238,0),var(--cyan) 8%,var(--violet) 55%,rgba(167,139,250,0))}
+.tl-item{position:relative;width:calc(50% - 2.6rem);margin-bottom:1.6rem}
+.tl-item:nth-child(odd){margin-left:0;text-align:right}
+.tl-item:nth-child(even){margin-left:calc(50% + 2.6rem)}
+.tl-item .tl-card{border:1px solid var(--stroke);border-radius:14px;padding:1.25rem 1.4rem;
+  background:var(--panel);backdrop-filter:blur(10px);transition:.4s}
+.tl-item:hover .tl-card{border-color:var(--stroke-hi);transform:translateY(-4px);
+  box-shadow:0 22px 46px -22px rgba(56,189,248,.4)}
+.tl-item.warm:hover .tl-card{border-color:rgba(251,191,36,.5);
+  box-shadow:0 22px 46px -22px rgba(251,191,36,.4)}
+.tl-item::before{content:"";position:absolute;top:1.4rem;width:13px;height:13px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--cyan);box-shadow:0 0 12px rgba(34,211,238,.7);
+  transition:.4s;z-index:3}
+.tl-item:nth-child(odd)::before{right:-3.15rem}
+.tl-item:nth-child(even)::before{left:-3.15rem}
+.tl-item::after{content:"";position:absolute;top:2rem;width:1.85rem;height:1px;
+  background:linear-gradient(90deg,var(--stroke),rgba(34,211,238,.5))}
+.tl-item:nth-child(odd)::after{right:-2rem}
+.tl-item:nth-child(even)::after{left:-2rem;
+  background:linear-gradient(270deg,var(--stroke),rgba(34,211,238,.5))}
+.tl-item:hover::before{background:var(--cyan);transform:scale(1.3)}
+.tl-item.warm::before{border-color:var(--amber);box-shadow:0 0 12px rgba(251,191,36,.7)}
 .tl-item.warm:hover::before{background:var(--amber)}
-.tl-year{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;color:var(--faint);
+.tl-year{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;color:var(--faint);
   text-transform:uppercase}
-.tl-item h3{margin:.25rem 0 .35rem;transition:.3s}
+.tl-item h3{margin:.3rem 0 .4rem;font-size:1.02rem;transition:.3s}
 .tl-item:hover h3{color:var(--cyan)}
 .tl-item.warm:hover h3{color:var(--amber)}
-.tl-item p{font-size:.92rem}
-.tl-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--violet);border:1px solid var(--stroke);border-radius:999px;padding:.15rem .55rem;
-  margin-left:.5rem;white-space:nowrap}
+.tl-item p{font-size:.88rem;max-width:none}
+.tl-tag{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--violet);border:1px solid var(--stroke);border-radius:999px;padding:.12rem .5rem;
+  margin-left:.4rem;white-space:nowrap;display:inline-block;vertical-align:middle}
 .tl-tag.t{color:var(--amber);border-color:rgba(251,191,36,.3)}
+@media(max-width:860px){
+  .tl::before{left:6px;transform:none}
+  .tl-item,.tl-item:nth-child(odd),.tl-item:nth-child(even){
+    width:100%;margin-left:0;padding-left:2.4rem;text-align:left}
+  .tl-item:nth-child(odd)::before,.tl-item:nth-child(even)::before{left:0;right:auto}
+  .tl-item::after{display:none}
+}
 
 /* ===== prose ===== */
 .prose{max-width:68ch}
