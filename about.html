@@ -44,14 +44,19 @@
 
 <section style="padding-top:1rem">
   <div class="wrap">
-    <div class="reveal prose">
-      <span class="eyebrow">How I got here</span>
-      <h2>I started at a <span class="grad">bench</span></h2>
-      <p>I trained as an organic chemist. My M.Sc. at Kurukshetra University was specialised in organic chemistry, and in the summer of 2015 I went to <b>NIPER Mohali</b> as a trainee — running HPLC methods and doing air-sensitive synthesis under nitrogen — the kind of work where you learn that a result is only as good as the care you took getting it. Glassware, inert atmospheres, spectra you have to actually interpret. I still think that year taught me more about rigour than any course did.</p>
-      <p>Then I moved to the other end of the same subject. My doctoral work at <b>IIT Roorkee</b> is theoretical and computational: bead–spring polymers, rupture and rebinding under force, Fokker–Planck equations, code in C and Mathematica. No glassware at all. But the instinct is identical — a simulation, like a synthesis, will happily give you a beautiful wrong answer if you don't check every step.</p>
-      <p>What I've built since sits across both: molecular dynamics, density functional theory, docking and virtual screening, periodic DFT for materials, and a stint modelling quantum batteries because the physics was interesting. The through-line isn't a technique. It's <b>using computation to see things experiments can't</b> — and knowing, from the bench, exactly how much a measurement costs.</p>
-      <div class="pull">A simulation, like a synthesis, will happily give you a beautiful wrong answer if you don't check every step.</div>
-      <p>And I've taught the whole way through. Lecturer at 24, teaching assistant across four years of my PhD, and mentor to students from IGCSE to CSIR-NET ever since. Teaching isn't the thing I do <em>instead</em> of research — it's the thing that keeps my explanations honest. You find out very fast which parts you actually understand when someone asks you why.</p>
+    <div class="reveal split">
+      <div class="split-head">
+        <span class="eyebrow">How I got here</span>
+        <h2>I started at a <span class="grad">bench</span></h2>
+        <div class="note">2011 — 2018<br>Sirsa → Kurukshetra<br>→ Mohali → Roorkee</div>
+      </div>
+      <div class="prose">
+        <p>I trained as an organic chemist. My M.Sc. at Kurukshetra University was specialised in organic chemistry, and in the summer of 2015 I went to <b>NIPER Mohali</b> as a trainee — running HPLC methods and doing air-sensitive synthesis under nitrogen. Glassware, inert atmospheres, spectra you have to actually interpret. It's the kind of work where you learn that a result is only as good as the care you took getting it.</p>
+        <p>Then I moved to the other end of the same subject. My doctoral work at <b>IIT Roorkee</b> is theoretical and computational: bead–spring polymers, rupture and rebinding under force, Fokker–Planck equations, code in C and Mathematica. No glassware at all. But the instinct is identical — a simulation, like a synthesis, will happily give you a beautiful wrong answer if you don't check every step.</p>
+        <div class="pull">A simulation, like a synthesis, will happily give you a beautiful wrong answer if you don't check every step.</div>
+        <p>What I've built since sits across both: molecular dynamics, density functional theory, docking and virtual screening, periodic DFT for materials, and a stint modelling quantum batteries because the physics was interesting. The through-line isn't a technique. It's <b>using computation to see things experiments can't</b> — and knowing, from the bench, exactly how much a measurement costs.</p>
+        <p>And I've taught the whole way through. Lecturer straight after my M.Sc., teaching assistant across four years of my PhD, and mentor to students from IGCSE to CSIR-NET ever since. Teaching isn't the thing I do <em>instead</em> of research — it's the thing that keeps my explanations honest. You find out very fast which parts you actually understand when someone asks you why.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -144,7 +149,7 @@
       <div class="tl-item"><div class="tl-card">
         <div class="tl-year">2026</div>
         <h3>AMRSC · Thesis submitted</h3>
-        <p>Associate Member of the Royal Society of Chemistry. Thesis in. Looking for what's next.</p>
+        <p>Associate Member of the Royal Society of Chemistry. Thesis in — and straight on to the next stage of the computational work.</p>
       </div></div>
     </div>
   </div>
@@ -152,13 +157,18 @@
 
 <section>
   <div class="wrap">
-    <div class="reveal prose">
-      <span class="eyebrow">How I work</span>
-      <h2>Do → check → <span class="grad">why</span></h2>
-      <p>I keep registers. For every step of a calculation I write down three things: <b>what I did</b> (the exact command), <b>what I checked</b> (the output that proves it worked), and <b>why</b> (the physical reason it's there). It sounds like bureaucracy. It isn't.</p>
-      <p>Here's the reason. Simulations almost never crash when they're wrong — they quietly return a plausible, beautiful, incorrect number. A mislabelled residue, a box one nanometre too short, a sign flipped in a vector: the run completes, the plot looks lovely, and nothing tells you. The only defence is to check every step against something you can verify independently, before the next step is built on it.</p>
-      <p>That habit has caught real errors in my own work — a distance that came back at 70 Å when the physics said 3, a run that died a fifth of the way through and left a file that looked almost normal. Each one would have poisoned everything downstream. Each one was caught by reading an output carefully instead of assuming.</p>
-      <p>It's also why I like teaching. A student asking "but <em>why</em>?" is doing exactly what a good register does — refusing to let a step pass unexamined.</p>
+    <div class="reveal split">
+      <div class="split-head">
+        <span class="eyebrow">How I work</span>
+        <h2>Do → check → <span class="grad">why</span></h2>
+        <div class="note">DO — the exact command<br>CHECK — the output that<br>&nbsp;&nbsp;&nbsp;&nbsp;proves it worked<br>WHY — the physical reason<br>&nbsp;&nbsp;&nbsp;&nbsp;it's there</div>
+      </div>
+      <div class="prose">
+        <p>I keep registers. For every step of a calculation I write down three things: <b>what I did</b> (the exact command), <b>what I checked</b> (the output that proves it worked), and <b>why</b> (the physical reason it's there). It sounds like bureaucracy. It isn't.</p>
+        <p>Here's the reason. Simulations almost never crash when they're wrong — they quietly return a plausible, beautiful, incorrect number. A mislabelled residue, a box one nanometre too short, a sign flipped in a vector: the run completes, the plot looks lovely, and nothing tells you. The only defence is to check every step against something you can verify independently, before the next step is built on it.</p>
+        <p>That habit has caught real errors in my own work — a distance that came back at 70 Å when the physics said 3, a run that died a fifth of the way through and left a file that looked almost normal. Each one would have poisoned everything downstream. Each one was caught by reading an output carefully instead of assuming.</p>
+        <p>It's also why I like teaching. A student asking "but <em>why</em>?" is doing exactly what a good register does — refusing to let a step pass unexamined.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -286,12 +296,12 @@
       <div class="card">
         <span class="ic">BASED IN</span>
         <h3>Roorkee, India</h3>
-        <p>Department of Chemistry, Indian Institute of Technology Roorkee. Open to relocation, and to remote-first computational roles.</p>
+        <p>Department of Chemistry, Indian Institute of Technology Roorkee. The work travels well — most of it runs wherever there's a machine.</p>
       </div>
       <div class="card">
-        <span class="ic">LOOKING FOR</span>
-        <h3>Computational chemistry</h3>
-        <p>Molecular simulation, computational chemistry, computer-aided drug design — industry or postdoc. Roles where the modelling <em>is</em> the work, not a side task.</p>
+        <span class="ic">WORKING ON</span>
+        <h3>The next stage</h3>
+        <p>Extending the force-spectroscopy work from coarse-grained theory into all-atom simulation, and towards the quantum-chemical question underneath it: what strain actually does to the electrons in a bond.</p>
       </div>
     </div>
   </div>
@@ -303,7 +313,7 @@
       <div>
         <span class="eyebrow">Contact</span>
         <h2 style="font-size:clamp(1.7rem,3vw,2.4rem)">Let's <span class="grad">talk</span></h2>
-        <p>Thesis submitted, looking for the next thing. If your team does molecular simulation, quantum chemistry, or drug design — or if you need someone who can teach chemistry properly — I'd like to hear from you.</p>
+        <p>Thesis submitted, and the computational work carries on. If you're doing molecular simulation, quantum chemistry, or drug design — or you need someone who can teach chemistry properly — I'd like to hear from you.</p>
         <p style="margin-top:1rem;font-family:var(--mono);font-size:.72rem;color:var(--faint)">
           Usually reply within a day or two.
         </p>
